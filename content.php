@@ -10,13 +10,13 @@
 
 
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 
 	<?php if ( ! is_search() ) : ?>
 
 		<?php if ( has_post_thumbnail()) : ?>
 
-		<div class="post-img-wrap">
+		<div class="post-img-wrap" itemprop="thumbnailUrl">
 
 			 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 
@@ -44,7 +44,7 @@
 
 	<header class="entry-header">
 
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+		<h1 class="entry-title" itemprop="headline"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 
 
@@ -64,7 +64,7 @@
 
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 
-	<div class="entry-summary">
+	<div class="entry-summary" itemprop="text">
 
 		<?php the_excerpt(); ?>
 
@@ -72,7 +72,7 @@
 
 	<?php else : ?>
 
-	<div class="entry-content">
+	<div class="entry-content" itemprop="text">
 
 		<?php 
 

@@ -30,10 +30,7 @@
 
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<!--[if lt IE 9]>
-<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
-<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/ie.css" type="text/css">
-<![endif]-->
+
 
 <?php wp_head(); ?>
 
@@ -43,7 +40,7 @@
 
 <?php if(isset($_POST['scrollPosition'])): ?>
 
-	<body <?php body_class(); ?> onLoad="window.scrollTo(0,<?php echo intval($_POST['scrollPosition']); ?>)">
+	<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage" onLoad="window.scrollTo(0,<?php echo $_POST['scrollPosition']; ?>)">
 
 <?php else: ?>
 
@@ -78,13 +75,13 @@
 endif; ?>
 
 
-<header id="home" class="header">
+<header id="home" class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 
 	<div id="main-nav" class="navbar navbar-inverse bs-docs-nav" role="banner">
 
 		<div class="container">
 
-			<div class="navbar-header responsive-logo">
+			<div class="navbar-header responsive-logo" itemscope="itemscope" itemtype="http://schema.org/Brand">
 
 				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
 
@@ -106,9 +103,9 @@ endif; ?>
 
 					if(isset($zerif_logo) && $zerif_logo != ""):
 
-						echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
+						echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" itemprop="logo">';
 
-							echo '<img src="'.$zerif_logo.'" alt="'.get_bloginfo('title').'">';
+							echo '<img itemprop="logo" src="'.$zerif_logo.'" alt="'.get_bloginfo('title').'">';
 
 						echo '</a>';
 
@@ -116,7 +113,7 @@ endif; ?>
 
 						echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
 
-						echo '<img src="'.get_stylesheet_directory_uri().'/images/logo.png" alt="'.get_bloginfo('title').'">';
+						echo '<img itemprop="logo" src="'.get_stylesheet_directory_uri().'/images/logo.png" alt="'.get_bloginfo('title').'">';
 
 						echo '</a>';
 
@@ -128,7 +125,7 @@ endif; ?>
 
 			</div>
 
-			<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation"   id="site-navigation">
+			<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation"   id="site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
 				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav navbar-right responsive-nav main-nav-list', 'fallback_cb'     => 'zerif_wp_page_menu')); ?>
 

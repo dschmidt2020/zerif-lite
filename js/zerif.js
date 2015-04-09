@@ -67,7 +67,7 @@ jQuery(document).ready(function() {
       return false;
     }
   });
-  if ( thisOpen == false && (typeof jQuery('.contact-form textarea').val() != 'undefined') && (jQuery('.contact-form textarea').val().length > 0) ) {
+  if ( thisOpen == false && jQuery('.contact-form textarea').val().length > 0 ) {
     thisOpen = true;
     jQuery('.g-recaptcha').css('display','block').delay(1000).css('opacity','1');
   }
@@ -162,13 +162,29 @@ jQuery(document).ready(function() {
 
 
 
-
-
 /*=================================
 
 ===  SMOOTH SCROLL             ====
 
 =================================== */
+
+jQuery(document).ready(function() {
+    var offset = 220;
+    var duration = 500;
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+            jQuery('.anchorLink').fadeIn(duration);
+        } else {
+            jQuery('.anchorLink').fadeOut(duration);
+        }
+    });
+    
+    jQuery('.anchorLink').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    })
+});
 
 var scrollAnimationTime = 1200,
 

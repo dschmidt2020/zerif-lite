@@ -10,13 +10,13 @@
 
 
 
-<article class="large-container" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article class="large-container" id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 
 	<?php if ( ! is_search() ) : ?>
 
 		<?php if ( has_post_thumbnail()) : ?>
 
-		<div class="post-img-wrap-large">
+		<div class="post-img-wrap-large" itemprop="thumbnailUrl">
 
 			 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 
@@ -27,7 +27,7 @@
 						$image_url_mobile = wp_get_attachment_image_src($image_id,'post-thumbnail-large-mobile', true);
 					?>
 
-			 		<picture>
+			 		<picture itemprop="image">
 						<source media="(max-width: 600px)" srcset="<?php echo $image_url_mobile[0]; ?>">
 						<source media="(max-width: 768px)" srcset="<?php echo $image_url_tablet[0]; ?>">
 						<img src="<?php echo $image_url_big[0]; ?>" alt="The Breakfast Combo">

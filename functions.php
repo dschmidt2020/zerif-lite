@@ -1323,10 +1323,10 @@ class zerif_team_widget extends WP_Widget
 
 				<?php if( !empty($instance['image_uri']) ): ?>
 				
-					<figure class="profile-pic">
+					<figure class="profile-pic" itemscope="itemscope" itemtype="http://schema.org/Person">
 
 
-						<img src="<?php echo esc_url($instance['image_uri']); ?>" alt="">
+						<img itemprop="image" src="<?php echo esc_url($instance['image_uri']); ?>" alt="">
 
 
 					</figure>

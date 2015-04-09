@@ -4634,3 +4634,13 @@ body.custom-background {
 .zerif-copyright-box {
 	width: 100%;
 }
+.anchorLink {
+	position: fixed;
+	height: 100px;
+	width: 100px;
+	bottom: 2em;
+	right: 0;
+	background: url('wp-content/themes/zerif-lite/images/up-arrow.png') no-repeat;
+	padding: 1em;
+	display: none;
+}

@@ -138,7 +138,7 @@
 			
 			
 					if( !empty($zerif_copyright) ):
-						echo '<div class="zerif-copyright-box" itemprop="copyrightYear"> '.esc_attr(__($zerif_copyright)).' <a class="zerif-copyright" href="https://themeisle.com/themes/zerif-lite/" target="_blank" rel="nofollow">Zerif Lite </a>'.__('powered by','zerif-lite').'<a class="zerif-copyright" href="http://wordpress.org/" target="_blank" rel="nofollow"> WordPress</a><a class="anchorLink" href="#"></a></div>';
+						echo '<div class="zerif-copyright-box" itemprop="copyrightYear"> '.esc_attr(__($zerif_copyright)).' <br /><a class="zerif-copyright" href="https://themeisle.com/themes/zerif-lite/" target="_blank" rel="nofollow">Zerif Lite </a>'.__('powered by','zerif-lite').'<a class="zerif-copyright" href="http://wordpress.org/" target="_blank" rel="nofollow"> WordPress</a><a class="anchorLink" href="#"></a></div>';
 					endif;
 
 				

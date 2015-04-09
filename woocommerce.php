@@ -34,15 +34,11 @@ get_header(); ?>
 
 <div class="container">
 
-
-
 <div class="content-left-wrap col-md-12">
 
 	<div id="primary" class="content-area">
 
-		<main id="main" class="site-main" role="main">
-
-
+		<main id="main" class="site-main" role="main" itemscope itemtype="http://schema.org/Store">
 
 			<?php woocommerce_content(); ?>
 

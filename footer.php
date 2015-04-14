@@ -18,7 +18,7 @@
 
 
 
-<footer id="footer">
+<footer id="footer" itemscope itemtype="http://schema.org/WPFooter">
 
 <div class="container">
 
@@ -138,10 +138,9 @@
 			
 			
 					if( !empty($zerif_copyright) ):
-						echo esc_attr($zerif_copyright);
+						echo '<div class="zerif-copyright-box" itemprop="copyrightYear"> '.esc_attr(__($zerif_copyright)).' <br /><a class="zerif-copyright" href="https://themeisle.com/themes/zerif-lite/" target="_blank" rel="nofollow">Zerif Lite </a>'.__('powered by','zerif-lite').'<a class="zerif-copyright" href="http://wordpress.org/" target="_blank" rel="nofollow"> WordPress</a></div>';
 					endif;
-					
-					echo '<div class="zerif-copyright-box"><a class="zerif-copyright" href="https://themeisle.com/themes/zerif-lite/" target="_blank" rel="nofollow">Zerif Lite </a>'.__('powered by','zerif-lite').'<a class="zerif-copyright" href="http://wordpress.org/" target="_blank" rel="nofollow"> WordPress</a></div>';
+
 					
 					echo '</div>';
 			
@@ -150,7 +149,7 @@
 
 </div> <!-- / END CONTAINER -->
 
-</footer> <!-- / END FOOOTER  -->
+</footer> <!-- / END FOOTER  -->
 
 
 
